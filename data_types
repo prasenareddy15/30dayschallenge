@@ -1,0 +1,12 @@
+def main():
+    v=input()
+    try:
+        v=int(v)
+        print("This is an integer input")
+    except:
+        try:
+            v=float(v)
+            print("This is a float input")
+        except:
+            print("Thix is a string input")
+main()
