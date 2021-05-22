@@ -1,4 +1,4 @@
-def main():
+def mained():
     v=input()
     try:
         v=int(v)
@@ -9,4 +9,4 @@ def main():
             print("This is a float input")
         except:
             print("Thix is a string input")
-main()
+mained()
