@@ -1,0 +1,14 @@
+/* Read input from STDIN. Print your output to STDOUT*/
+#include<stdio.h>
+int main()
+{
+	int a,c;
+	scanf("%d",&a);
+	c=1;
+	while(a/10 != 0 )
+	{
+		 a=a/10;
+		 c=c+1;
+	}
+	printf("%d",c);
+}
