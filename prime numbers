@@ -1,0 +1,44 @@
+/* Read input from STDIN. Print your output to STDOUT*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+int prime(int up)
+{
+    int i;
+	if (up==1)
+	{
+		return false;
+	}
+	else if(up==2)
+	{
+		return true;
+	}
+	else
+	{
+		for (i=2;i<up;i++)
+		{
+			if (up%i==0)
+			{
+				return false;
+			}
+			
+		}
+		return true;
+	}
+}
+
+int main()
+{
+	int a,b,c,i;
+	scanf("%d",&a);
+	scanf("%d",&b);
+	c=0;
+	for(i=a;i<b+1;i++)
+	{
+		if (prime(i))
+		{
+			c=c+1;
+		}
+	}
+	printf("%d",c);
+}
