@@ -1,0 +1,32 @@
+
+/* Read input from STDIN. Print your output to STDOUT*/
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n,c,a,sum,p;
+	scanf("%d",&a);
+	c=0;
+	n=a;
+	sum=0;
+	while(a!=0)
+	{
+		a=a/10;
+		c=c+1;
+	}
+	a=n;
+	while(a!=0)
+	{
+	    p=a%10;
+	    sum+=pow(p,c);
+	    a=a/10;
+	}
+	if(sum==n)
+	{
+		printf("True");
+	}
+	else
+	{
+		printf("False");
+	}
+}
