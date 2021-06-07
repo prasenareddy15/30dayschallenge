@@ -1,0 +1,36 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include<string.h>
+void main()
+{
+    char s[200];
+    int c=0,i=0,p=0;
+    printf("Enter the string:\n");
+    scanf("%[^\n]s", s);
+    while (s[i] != '\0')
+    {
+        if (s[i] >=65 && s[i]<=90)
+        {
+            c++;
+            //printf("the if is correctly executted:%d\n",c);
+        }
+        else if (s[i] >=97 && s[i]<=123)
+        {
+            p++;
+           // printf("count_p:%d\n letters: %s\n",p,&s[i]);
+        }
+        else
+        {
+            //printf("there is a missing complait\n");
+        }
+        i++;
+    }
+    printf("%d\n%d",c,p);
+}
