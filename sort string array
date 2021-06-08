@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void input(char e[100][100],int m)
+{
+    int i;
+    for(i=0;i<m;i++)
+    {
+        //printf("enter the %d th element of array:",i);
+        scanf("%s",e[i]);
+    }
+}
+void b_sort(char e[100][100],int m)
+{
+    char temp[30];
+    int i,j;
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<m-1-i;j++)
+        {
+            if((strcmp(e[j],e[j+1]))>0)
+            {
+                strcpy(temp,e[j]);
+                strcpy(e[j],e[j+1]);
+                strcpy(e[j+1],temp);
+            }
+        }
+    }
+}
+
+int main()
+{
+    int i,m;
+    scanf("%d",&m);
+    char f[100][100];
+    input(f,m);
+    b_sort(f,m);
+    //printf("the sorted arreay:\n");
+    for(i=0;i<m;i++)
+    {
+        if(i==m-1)
+        {
+            printf("%s",f[i]);
+        }
+        else
+        {
+            printf("%s\n",f[i]);
+        }
+    }
+}
