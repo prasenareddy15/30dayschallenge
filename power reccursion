@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<stdlib.h>
+int pows(int a,int n)
+{
+    if(n==0)
+    {
+        //printf("the one\n");
+        return 1;
+    }
+    else
+    {
+        //printf("the else\n");
+        return a*pows(a,n-1);
+    }
+}
+int main()
+{
+    int k,a,n;
+    //printf("enter the base and power in same statment:");
+    scanf("%d %d",&a,&n);
+    k=pows(a,n);
+    printf("%d",k);
+}
