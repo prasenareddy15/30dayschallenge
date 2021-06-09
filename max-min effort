@@ -1,0 +1,52 @@
+#include<stdio.h>
+int input(int e[100],int f[100], int m)
+{
+    int i;
+    for (i=0;i<m;i++)
+    {
+        //printf("enter the number [%d]:",i+1);
+        scanf("%d",&e[i]);
+        f[i]=e[i];
+    }
+}
+int main()
+{
+    int a,temp,e[100],f[100],i,j,p=0,q;
+    //printf("enter the array dimensions:");
+    scanf("%d",&a);
+    q=a-1;
+    input(e,f,a);
+    
+    for (i=0;i<a;i++)
+    {
+        for (j=0;j<a-1-i;j++)
+        {
+            if(e[j]>e[j+1])
+            {
+                temp=e[j];
+                e[j]=e[j+1];
+                e[j+1]=temp;
+            }
+        }
+    }
+    while(e[p]==f[p])
+    {
+        p=p+1;
+    }
+    while(e[q]==f[q])
+    {
+        q=q-1;
+    }
+    for (i=p;i<q+1;i++)
+    {
+        if(p==q)
+        {
+            printf("%d",f[i]);
+        }
+        else
+        {
+            printf("%d ",f[i]);
+        }
+        
+    }
+}
