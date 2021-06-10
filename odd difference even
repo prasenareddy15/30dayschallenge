@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int input(int e[100], int m)
+{
+    int i,o=0,ev=0;
+    for (i=0;i<m;i++)
+    {
+        //printf("enter the number [%d]:",i+1);
+        scanf("%d ",&e[i]);
+        if(i%2==0)
+        {
+            ev=ev+e[i];
+        }
+        else
+        {
+            o=o+e[i];
+        }
+    }
+    o=abs(o-ev);
+    //printf("even:[%d]\todd:[%d]\n:",ev,o);
+    printf("%d",o);
+}
+int main()
+{
+    int a,e[100],i;
+    //printf("enter the array dimensions:");
+    scanf("%d",&a);
+    input(e,a);
+    
+}
