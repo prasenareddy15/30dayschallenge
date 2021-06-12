@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<stdbool.h>
+int input(int e[100])
+{
+    int i;
+    for (i=0;i<2;i++)
+    {
+        //printf("enter the number [%d]:",i+1);
+        scanf("%d ",&e[i]);
+    }
+}
+
+int digit(int a)
+{
+    int i=0;
+    while(a!=0)
+    {
+        i=i+a%10;
+        a=a/10;
+    }
+    return i;
+}
+
+
+
+int main()
+{
+    int e[100],f[100],i;
+    //printf("enter the number:");
+    input(e);
+    for (i=0;i<2;i++)
+    {
+        f[i]=digit(e[i]);
+    }
+    if(f[0]>f[1])
+    {
+        printf("%d",e[0]);
+    }
+    else if(f[0]==f[1])
+    {
+        printf("Equal");
+    }
+    else
+    {
+        printf("%d",e[1]);
+    }
+}
