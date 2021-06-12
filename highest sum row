@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<stdlib.h>
+void input(int e[100][100],int m,int n)
+{
+    int i,j;
+    for (i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           //printf("enter the dimensions e[%d][%d]:",i,j);
+            scanf("%d ",&e[i][j]);
+        }
+    }
+}
+
+int check(int s[100], int e[2])
+{
+    int i,j,p;
+    i=0;
+    j=s[i];
+    for(p=0;p<e[0];p++)
+    {
+        if(s[p]>j)
+        {
+            j=s[p];
+            i=p;
+        }
+    }
+    for(p=0;p<e[0]-1;p++)
+    {
+        if(s[p]!=s[p+1])
+        {
+            return i;
+        }
+    }
+    return(-1);
+}
+
+int main()
+{
+    int mat[100][100],e[2],i,j,s[100],k;
+    for (i=0;i<2;i++)
+    {
+        //printf("enter the dimensions e[%d]:",i);
+        scanf("%d ",&e[i]);
+    }
+    input(mat,e[0],e[1]);
+    for(i=0;i<e[0];i++)
+    {
+        for (j=0;j<e[1];j++)
+        {
+            s[i]+=mat[i][j];
+        }
+    }
+    k=check(s,e);
+    if(k==-1)
+    {
+        printf("Equal");
+    }
+    else
+    {
+        printf("Row %d",k+1);
+    }
+    
+        
+}
+
